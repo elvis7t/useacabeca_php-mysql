@@ -30,8 +30,8 @@
             Aliens Abduction
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_report.php">Form Report Abduction</a></li>                        
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/report_abductions.php">Report Abduction</a></li>            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/aa_form_report.php">Form Report Abduction</a></li>                        
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/aa_list_report_abductions.php">Report Abduction</a></li>            
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -39,11 +39,11 @@
             Elvis Store
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_addemail.php">Form Registration E-mail on List </a></li>       
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_sendemail.php">Form Send E-mail</a></li>            
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_validation.php">Form Send E-mail with validation</a></li>                 
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_remove_email_search.php">Form Remove E-mail Search</a></li>                 
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/remove_emailList.php">List Remove E-mail List</a></li>                 
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/es_form_addemail.php">Form Registration E-mail on List </a></li>       
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/es_form_sendemail.php">Form Send E-mail</a></li>            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/es_form_validation.php">Form Send E-mail with validation</a></li>                 
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/es_form_remove_email_search.php">Form Remove E-mail Search</a></li>                 
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/es_remove_emailList.php">List Remove E-mail List</a></li>                 
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -51,8 +51,9 @@
             Guitar Wars
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/list_hiscores.php">Guitar Wars App</a></li>                        
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/form_addscore.php">Form add Score</a></li>            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_list_hiscores.php">Guitar Wars App</a></li>                        
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_form_addscore.php">Form add Score</a></li>            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_admin_listscore.php">Admin add Score</a></li>            
           </ul>
         </li>        
       </ul>

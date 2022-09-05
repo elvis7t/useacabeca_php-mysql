@@ -9,7 +9,7 @@ require_once('../model/conf.php');
     <div class="d-flex justify-content-center">
      Bem-vindo, intrépido guitarrista! Você é bom o suficiente para entrar na lista
      <br /> 
-      de recordes do guitar Wars? se for, clique <a href="form_addscore.php">Aqui</a>  para adicionar a sua pontuação.
+      de recordes do guitar Wars? se for, clique <a href="gw_form_addscore.php">Aqui</a>  para adicionar a sua pontuação.
     </div>
     <div class="col-md-6 offset-md-3">
         <table class="table" id="example">

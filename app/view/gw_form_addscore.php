@@ -17,24 +17,29 @@ require_once('../model/conf.php');
             $screenshot = $_FILE['screenshot']['name'];
 
             // if (!empty($name) && !empty($score) && !empty($screenshot)){
-                // //Move o arquivo para a pasta-alvo
-             $target = GW_UPLOADPATH . $screenshot;
-            //  if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $target)){
-               
+                //if(($screenshot_type == 'image/pnj') && ($screenshot_sise > 0) && ($screenshot_sise <= GW_UPLOADPATH))){
+                    // if($_FILES['screanshot']['error'] == 0){
+                            //Move o arquivo para a pasta-alvo
+                            //  $target = GW_UPLOADPATH . $screenshot;
+                            //if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $target)){               
 
-                    $sql ="INSERT INTO guitarwars VALUES(0,NOW(),'$nome','$score','$screenshot')";
-                    mysqli_query($con,$sql);
-                    echo '<div class="col-md-6 offset-md-3">';
-                    echo'<p>Obrigado por adicionar o seu recorde!</p>';
-                    echo'<p><strong>Nome:</strong>'.$nome.'<br />';
-                    echo'<strong>Score:</strong>'.$score.'</p>';
-                    echo'<img src="'.GW_UPLOADPATH. $screenshot.'" alt="Score image">';
-                    echo'</div>';
-                    // echo'<p><a href="'.$hosted.'/view/index.php">';
-                    $nome="";
-                    $score="";
-                    // mysqli_close($con);
-                // }
+                            $sql ="INSERT INTO guitarwars VALUES(0,NOW(),'$nome','$score','$screenshot')";
+                            mysqli_query($con,$sql);
+                            echo '<div class="col-md-6 offset-md-3">';
+                            echo'<p>Obrigado por adicionar o seu recorde!</p>';
+                            echo'<p><strong>Nome:</strong>'.$nome.'<br />';
+                            echo'<strong>Score:</strong>'.$score.'</p>';
+                            echo'<img src="'.GW_UPLOADPATH. $screenshot.'" alt="Score image">';
+                            echo'</div>';
+                            // echo'<p><a href="'.$hosted.'/view/index.php">';
+                            $nome="";
+                            $score="";
+                            $screenshot="";
+                            // mysqli_close($con);
+                     // }
+                 // }
+              //}
+         // }
        
         }else{
             echo'<div class="col-md-6 offset-md-3">';
@@ -43,6 +48,9 @@ require_once('../model/conf.php');
             echo'</div>';
         }
 //    }
+//    }else{  echo'<p class="error"> O Arquivo precisa ser png com menos de '.''.'(GW_MAXFILESIZE / 1024).' KB de tamenho.</p>'; }
+''
+
         ?>
         <form enctype="multipart/form-data" method="post" action="<?=$_SERVER["PHP_SELF"];?>" class="col-md-6 offset-md-3">
             <div class="row mb-3">
