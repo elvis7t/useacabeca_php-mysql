@@ -10,11 +10,11 @@ require_once('../model/conf.php');
     <div class="container-fluid"> 
         <?php
         //Define as constantes do caminho e do tamenho maximo dos arquivos
-        define('GW_UPLOADPATH', 'image/');
+        define('GW_UPLOADPATH', '../image/');
         if(ISSET($_POST['submit'])){
             $nome = $_POST['nome'];
             $score = $_POST['score'];
-            $screenshot = $_FILE['screenshot']['name'];
+            $screenshot = "guitar.png";
 
             // if (!empty($name) && !empty($score) && !empty($screenshot)){
                 //if(($screenshot_type == 'image/pnj') && ($screenshot_sise > 0) && ($screenshot_sise <= GW_UPLOADPATH))){
