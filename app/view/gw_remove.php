@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 require_once('../config/menu.php');
 require_once('../model/conf.php');
@@ -74,4 +75,23 @@ echo '</div>';
 ?>
 <?php
 require_once('../config/footer.php');
+=======
+<?php
+require_once('../config/menu.php');
+require_once('../model/conf.php');
+?>
+<body>
+    <div class="d-flex justify-content-center">
+<?php
+ extract($_GET);
+ $sql = "DELETE FROM guitarwars WHERE gw_id =".$id;
+ $result = mysqli_query($con, $sql);
+
+ echo "<h1>Id ".$id." Foi removido</h1>";
+?>
+</div>
+</body
+<?php
+require_once('../config/footer.php');
+>>>>>>> 8873f45b80b73266875547cf15586c6c78b5dbd5
 ?>
