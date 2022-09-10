@@ -17,6 +17,7 @@ require_once('../model/conf.php');
                 <th>Data</th>
                 <th>Nome</th>
                 <th>SCORE</th>
+                <th>Rankin</th>
                 <th>SCREENSHOT</th>
             </thead>           
                 <?php
@@ -24,11 +25,12 @@ require_once('../model/conf.php');
                 $result = mysqli_query($con,$sql);
                 $row = array();
                 while($row = mysqli_fetch_array($result)){
-                    echo'<tr>';
-                    echo'<td>'.$row['gw_id'].'</td>';
+                    echo'<tr class="guitar">';
+                    echo'<td class="id">'.$row['gw_id'].'</td>';
                     echo'<td>'.$row['gw_date'].'</td>';
-                    echo'<td>'.$row['gw_name'].'</td>';
-                    echo'<td>'.$row['gw_score'].'</td>';
+                    echo'<td class="name">'.$row['gw_name'].'</td>';
+                    echo'<td class="score">'.$row['gw_score'].'</td>';
+                    echo'<td class="imc">0</td>';
                     if(is_file($row['gw_screenshot']) && filesize($row['gw_screenshot'])>0){
                         echo'<td><img src="../image/'.$row['gw_screenshot'].'" alt="Score image"</td>';                         
                     }else{
