@@ -6,7 +6,7 @@ require_once('../model/conf.php');
     <div class="container d-flex justify-content-center">
         <h1>Reports of abductions by aliens</h1>
     </div>
-    <div class="container-fluid">
+    <div class="form-group col-md-6 offset-md-3">
         <form method="post" action="<?php echo$_SERVER["PHP_SELF"];?>">
         <table class="table table-striped" id="example">
                 <thead>
@@ -25,6 +25,7 @@ require_once('../model/conf.php');
                     foreach($_POST['todelete'] as $deleteItem){
                     $sql = "DELETE FROM aliens_abduction WHERE aa_id = $deleteItem";
                     mysqli_query($con, $sql);
+                    echo 'EMail "'.$deleteItem.'" foi deletado com sucesso';
                     }
                     $sql = "SELECT * FROM aliens_abduction";
                     $result = mysqli_query($con, $sql) or die(mysqli_error($con));

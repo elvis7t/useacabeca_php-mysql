@@ -48,19 +48,18 @@ require_once('../config/menu.php');
                     echo '<div class="form-check form-switch">';
                     echo '<input class="form-check-input" type="checkbox" role="switch"   name="todelete[]" value="'.$row['elist_id'].'">';          
                     echo'</div>';
-                    echo'</td>';
-                    
+                    echo'</td>'; 
+                    echo '</tr>';                   
                 }
                 
                 // mysqli_close($con);    
-                ?>
-                </tr>
+                ?>                
             </table>
         <div class="col-12">
             <button class="btn btn-danger" name="submit"   type="submit">Remove</button>
         </div>
+        </form>
     </div>
-
 </body>
 <?php
 require_once('../config/footer.php');
