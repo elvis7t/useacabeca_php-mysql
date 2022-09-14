@@ -18,20 +18,14 @@ if(isset($_GET['id'])){
     echo '</div>';
 }
 
-if (isset($_POST['submit'])){
-    if ($_POST['confirm'] == 'yes'){
-        //Exclui p arquivo gráfico do servidores
-        // @unlink(GW_UPLOADPATH . $screenshot)
-        $sql = "DELETE FROM guitarwars WHERE gw_id = ".$id." LIMIT 1";
+if (isset($_POST['submit'])){    
+        $sql = "UPDATE guitarwars SET gw_aproved = '".$_POST['confirm']."' WHERE gw_id = $id LIMIT 1";
         mysqli_query($con, $sql);
         echo '<div class="col-md-6 offset-md-3">';
-        echo '<p class="error"> A Pontuação '.$id.' foi removida com sucesso</p>';
+        echo '<p class="error"> A Pontuação '.$id.' foi alterada com sucesso</p>';
         echo '</div>';
-    }else{
-        echo '<div class="col-md-6 offset-md-3">';
-        echo '<p class="error"> A Pontuação não foi removida</p>';
-        echo '</div>';
-    }
+    
+        
 }else if(isset($id)){
     $sql = "SELECT * FROM guitarwars WHERE gw_id = ".$id;
     $result = mysqli_query($con, $sql);
@@ -40,29 +34,34 @@ if (isset($_POST['submit'])){
         $nome = $row['gw_name'];
         $data = $row['gw_date'];
         $score = $row['gw_score'];
+        $screenshot = $row['gw_screenshot'];
+        $check = $row['gw_aproved']=='n'?"checked":"";
+        $check2 = $row['gw_aproved']=='a'?"checked":"";
+
     }
 
-
+   
     echo '<div class="col-md-6 offset-md-3">';
     echo '<p class="bg-danger"> Tem certeza de que deseja apagar a pontuação abaixo?:</p>';
     echo '<p><strong>Nome:</strong> '.$nome.' <br /><strong>Data:</strong> '.$data.' <br />
     <strong>Pontuação: </strong> '.$score.' <br /> </p>';
+    echo '<img src="../image/'.$screenshot.'">';  
 
     echo'<div class="form-group col-mb-6 offset">';
-    echo'<form method="post" action="gw_remove.php" class="row g-3">';
+    echo'<form method="post" action="gw_moderar.php" class="row g-3">';
     echo'<div class="col-auto">';
-    echo'<input class="form-check-input" type="radio" name="confirm" value="yes" id="flexRadioDefault1">';
-    echo'<label class="form-check-label" for="flexRadioDefault1"> Yes';
+    echo'<input class="form-check-input" type="radio" name="confirm" value="a" id="flexRadioDefault1" '.$check2.'>';
+    echo'<label class="form-check-label" for="flexRadioDefault1"> Aprovado';
     echo'</label>';
     echo'</div>';
     echo'<div class="col-auto">';
-    echo'<input class="form-check-input" type="radio" name="confirm" value="no" id="flexRadioDefault2" checked>';
-    echo'<label class="form-check-label" for="flexRadioDefault2">No';
+    echo'<input class="form-check-input" type="radio" name="confirm" value="n" id="flexRadioDefault2" '.$check.'>';
+    echo'<label class="form-check-label" for="flexRadioDefault2">Nâo aprovado';
     echo'</label>';
     echo'</div>';
     echo'<div class="col-auto">';
     echo '<input type="hidden" value="'.$id.'" name="id"/>';    
-    echo '<input type="submit" class="btn btn-danger" value="Remover" name="submit">';    
+    echo '<input type="submit" class="btn btn-primary" value="Moderar" name="submit">';    
     echo '</div>';    
     echo '</form>';
     echo '</div>';    

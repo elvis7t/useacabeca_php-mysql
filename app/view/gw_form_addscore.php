@@ -23,7 +23,7 @@ require_once('../model/conf.php');
                             //  $target = GW_UPLOADPATH . $screenshot;
                             //if (move_uploaded_file($_FILES['screenshot']['tmp_name'], $target)){               
 
-                            $sql ="INSERT INTO guitarwars VALUES(0,NOW(),'$nome','$score','$screenshot')";
+                            $sql ="INSERT INTO guitarwars VALUES(0,NOW(),'$nome','$score','$screenshot', 'n')";
                             mysqli_query($con,$sql);
                             echo '<div class="col-md-6 offset-md-3">';
                             echo'<p>Obrigado por adicionar o seu recorde!</p>';

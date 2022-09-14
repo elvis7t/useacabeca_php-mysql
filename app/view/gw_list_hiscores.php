@@ -11,7 +11,7 @@ require_once('../model/conf.php');
         de recordes do guitar Wars? se for, clique  <a href="gw_form_addscore.php">Aqui</a>  para adicionar a sua pontuação.</h5>
     </div>
     <div class="col-md-6 offset-md-3">
-        <table class="table" id="example">
+        <table class="table table-striped table-bordered" id="example">
             <thead>
                 <th>ID</th>
                 <th>Data</th>
@@ -21,7 +21,7 @@ require_once('../model/conf.php');
                 <th>SCREENSHOT</th>
             </thead>           
                 <?php
-                $sql = "SELECT * FROM guitarwars ORDER BY gw_score DESC";
+                $sql = "SELECT * FROM guitarwars WHERE gw_aproved = 'a' ORDER BY gw_score DESC";
                 $result = mysqli_query($con,$sql);
                 $row = array();
                 while($row = mysqli_fetch_array($result)){

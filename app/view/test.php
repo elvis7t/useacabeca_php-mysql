@@ -1,5 +1,5 @@
 <?php
-require_once('../config/menu.php');
+require_once('../config/authentica.php');
 ?>
 <body>
     <div class="d-flex justify-content-center">
@@ -33,10 +33,7 @@ require_once('../config/menu.php');
          ?>
          <input class="btn btn-danger" type="submit" name="send">
        </form>
-    </div>
-
-
-    
+    </div>    
 </body>
 <?php
 require_once('../config/footer.php');
