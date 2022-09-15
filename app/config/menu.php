@@ -58,6 +58,16 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Mismatch
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_list_hiscores.php">Guitar Wars App</a></li>                        
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_form_addscore.php">Form add Score</a></li>            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/gw_admin_listscore.php">Admin add Score</a></li>            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Test
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">            

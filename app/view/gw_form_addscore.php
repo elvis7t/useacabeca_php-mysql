@@ -12,11 +12,11 @@ require_once('../model/conf.php');
         //Define as constantes do caminho e do tamenho maximo dos arquivos
         define('GW_UPLOADPATH', '../image/');
         if(ISSET($_POST['submit'])){
-            $nome = $_POST['nome'];
+            $nome = mysqli_real_escape_string($con, trim($_POST['nome']));
             $score = $_POST['score'];
             $screenshot = "guitar.png";
 
-            // if (!empty($name) && !empty($score) && !empty($screenshot)){
+            // if (!empty($name) && is_numeric($score) && !empty($screenshot)){
                 //if(($screenshot_type == 'image/pnj') && ($screenshot_sise > 0) && ($screenshot_sise <= GW_UPLOADPATH))){
                     // if($_FILES['screanshot']['error'] == 0){
                             //Move o arquivo para a pasta-alvo
