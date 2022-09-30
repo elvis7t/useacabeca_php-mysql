@@ -1,40 +1,13 @@
 <?php
 require_once('../config/authentica.php');
-?>
-<body>
-    <div class="d-flex justify-content-center">
-        <h1> Teste de fomulario</h1>
-    </div>
 
-    <div class="col-md-6 offset-md-3">
-       <form method="post" action="<?=$_SERVER['PHP_SELF'];?>" class="form-vertical">
-       <?php
-       require_once '../model/conf.php';
-       if(ISSET($_POST["send"])){
-        foreach($_POST['deleta'] as $deletItem ){
-            $sql = "DELETE FROM email_list WHERE elist_id = $deletItem";
-            mysqli_query($con, $sql)or Die(mysqli_error($con));
-            echo "Email Deletado";
-        }
-    }
-         $sql ="SELECT * FROM email_list ";
-         $result = mysqli_query($con,$sql)or die(mysqli_error($result)); 
-         $row = array();
-         
-         while($row = mysqli_fetch_array($result)){
-            echo'<div class="form-check form-switch">';
-            echo "<input type='checkbox' class='form-check-input' role='switch' value =".$row['elist_id']." name='deleta[]'>";
-            echo ' '.$row['elist_firstname'];
-            echo ' '.$row['elist_lastname'];
-            echo ' '.$row['elist_email'];
-            echo '<br />';
-            echo '</div>';
-         }
-         ?>
-         <input class="btn btn-danger" type="submit" name="send">
-       </form>
-    </div>    
-</body>
-<?php
+$Url[1] = (empty($Url[1]) ? null : $Url[1]);
+if(file_exists(DIRECTORY_SEPARATOR . '/' .$Url[0] . 'php' )):
+    require DIRECTORY_SEPARATOR . '/' .$Url[0] . 'php';
+elseif(file_exists(DIRECTORY_SEPARATOR . '/' . $Url[0] . '/' . $Url[1] . 'php')):  
+    require DIRECTORY_SEPARATOR . '/' . $Url[0] . '/' . $Url[1] . 'php';
+else:
+        require '../404.php';  
+endif;
 require_once('../config/footer.php');
 ?>

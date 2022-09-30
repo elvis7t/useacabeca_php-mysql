@@ -1,0 +1,15 @@
+RewriteEngine On
+<FilesMatch "(\.(engine|inc|info|install|module|profile|po|sh|.*sql|theme|tpl(\.php)? |xtmpl)|code-style\.pl|Entries.*|Repository|Root|Tag|Template)$">
+Order allow,deny
+</FilesMatch>
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1 [NC]
+# Habilitar no Ubunto no Docker
+# a2enmod rewrite
+
+# Não mostrar listagens de diretório
+Options -Indexes
+# Não mostrar listagens de diretório
+                
