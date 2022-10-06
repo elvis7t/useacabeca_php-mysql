@@ -1,4 +1,8 @@
 <?php
+$getUrl = strip_tags(trim(filter_input(INPUT_GET, 'url', FILTER_DEFAULT)));//strip_tags evit inserção de js na url
+$setUrl =(empty($getUrl) ? 'test' : $getUrl);
+$Url = explode('/', $setUrl );
+
 $username = 'rock';
 $password = 'roll';
 

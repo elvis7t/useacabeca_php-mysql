@@ -1,5 +1,5 @@
 var titulo = document.querySelector("h1");
-titulo.textContent = "TESTE";
+titulo.textContent = "VAR JS";
 
 var guitar = document.querySelectorAll(".guitar");
 console.log(titulo);
