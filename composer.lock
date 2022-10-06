@@ -1,0 +1,59 @@
+{
+    "_readme": [
+        "This file locks the dependencies of your project to a known state",
+        "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
+        "This file is @generated automatically"
+    ],
+    "content-hash": "d1c1a7dc2a0c22883812485a00b5fc3d",
+    "packages": [
+        {
+            "name": "william-costa/database-manager",
+            "version": "v0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/william-costa/database-manager.git",
+                "reference": "ed871363f27251a882b9e5dc036dcac566b271c4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/william-costa/database-manager/zipball/ed871363f27251a882b9e5dc036dcac566b271c4",
+                "reference": "ed871363f27251a882b9e5dc036dcac566b271c4",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "WilliamCosta\\DatabaseManager\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "William Costa",
+                    "email": "canalwdev@gmail.com"
+                }
+            ],
+            "description": "A simple library for managing database connections, results pagination and building queries in PHP.",
+            "support": {
+                "issues": "https://github.com/william-costa/database-manager/issues",
+                "source": "https://github.com/william-costa/database-manager/tree/v0.1.0"
+            },
+            "time": "2021-03-19T18:51:35+00:00"
+        }
+    ],
+    "packages-dev": [],
+    "aliases": [],
+    "minimum-stability": "stable",
+    "stability-flags": [],
+    "prefer-stable": false,
+    "prefer-lowest": false,
+    "platform": [],
+    "platform-dev": [],
+    "plugin-api-version": "2.2.0"
+}
