@@ -25,23 +25,22 @@ class Router
     private $routes = [];
     /**
      * Instancia de Request
-     * @var request 
+     * @var Request 
      */
     private $request;
     /**
      * Metodo responsável por iniciar a classe
-     * @var request $url
+     * @param string $url
      */
 
     public function __construct($url)
     {
-        $this->request = new request();
+        $this->request = new Request($this);
         $this->url     = $url;
         $this->setPrefix();
     }
     /**
-     * Metodo responsável por definir o prefixo das rotas
-     * @var request $url
+     * Metodo responsável por definir o prefixo das rotas     
      */
     private function setPrefix()
     {
@@ -208,5 +207,12 @@ class Router
         } catch (Exception $e) {
             return new Response($e->getCode(), $e->getMessage());
         }
+    }
+    /**
+     * Metodo Responsavel por retornar a URL atual
+     * @return string     
+     */
+    public function getCurrentUrl(){
+     return $this->url.$this->getUri();
     }
 }

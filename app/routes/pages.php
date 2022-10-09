@@ -41,8 +41,8 @@ $obRota->post('/abductions_form', [
 
 // //ROTA DEPOIMENTOS
 // $obRota->get('/depoimentos', [
-//     function () {
-//         return new Response(200, Pages\Testimony::getTestimoneis());
+//     function ($request) {
+//         return new Response(200, Pages\Testimony::getTestimonies($request));
 //     }
 // ]);
 // //ROTA DEPOIMENTOS

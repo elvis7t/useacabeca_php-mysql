@@ -4,6 +4,11 @@ namespace App\Http;
 
 class Request
 {
+    /** 
+     * Instancia do Router
+     * @var Router 
+     */
+    private $router;
 
     /** 
      * Metodo HTTP da requisição
@@ -43,15 +48,35 @@ class Request
      * Construtor da Classe "Popular os dados dessa requisição"
      * @var array 
      */
-    public function __construct()
+    public function __construct($router)
     {
+        $this->router      = $router;
         $this->queryParams = $_GET ?? [];
         $this->postVars    = $_POST ?? [];
         $this->headers     = getallheaders(); // função q recebe todos os cabeçalhos
         $this->httpMethod  = $_SERVER['REQUEST_METHOD'] ?? '';
-        $this->uri         = $_SERVER['REQUEST_URI'] ?? '';
+        $this->setUri();
     }
+    /**
+     * Metodo Responsavel por definir a Uri        
+     */
+    private function setUri()
+    {
+        //URI COMPLETA (COM GETs)
+        $this->uri = $_SERVER['REQUEST_URI'] ?? '';
 
+        //REMOVE GETS DA Uri
+        $xURI = explode('?', $this->uri);
+        $this->uri = $xURI[0];
+    }
+    /**
+     * Metodo Responsavel por retornara instancia de ROuter    
+     * @return Router 
+     */
+    public function getRouter()
+    {
+        return $this->router;
+    }
 
     /**
      * Metodo Responsavel por retornar o método HTTP     
@@ -82,7 +107,7 @@ class Request
      * Metodo Responsavel por retornar os parametros da requisição "querystring"
      * @return array 
      */
-    public function getQueryParans()
+    public function getQueryParams()
     {
         return $this->queryParams;
     }
