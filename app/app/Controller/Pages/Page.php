@@ -25,7 +25,6 @@ class Page{
         'menu' => self::getMenu(),
         'content' => $content,
         'footer' => self::getFooter()
-        
         ]);
         // return 'Ola Mundo';
     }

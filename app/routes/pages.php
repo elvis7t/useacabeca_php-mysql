@@ -11,26 +11,38 @@ $obRota->get('/', [
 ]);
 
 //ROTA LISTA DE ADBUÇOES
-$obRota->get('/abductions_list', [
-    function () {
-        return new Response(200, Pages\abductions_list::getAbductionsList());
+$obRota->get('/abductions', [
+    function ($request) {
+        return new Response(200, Pages\Abductions::getAbductions($request));
     }
 ]);
 
 //ROTA FORM DE ADBUÇOES
+$obRota->get('/abductions_resp', [
+    function () {
+        return new Response(200, Pages\Abductions_form::getAbductionsResp($request));
+    }
+]);
+//ROTA FORM DE ADBUÇOES
 $obRota->get('/abductions_form', [
     function () {
-        return new Response(200, Pages\abductions_form::getAbductionsForm());
+        return new Response(200, Pages\Abductions_form::getAbductionsForm());
     }
 ]);
 
 //ROTA FORM DE ADBUÇOES
 $obRota->post('/abductions_form', [
     function ($request) {
-        return new Response(200, Pages\abductions_form::InsertAbductionsForm($request));
+        return new Response(200, Pages\Abductions_form::InsertAbductionsForm($request));
     }
 ]);
 
+//ROTA FORM DE ADBUÇOES
+$obRota->get('/abduction', [
+    function ($request) {
+        return new Response(200, Pages\Abduction::getAbduction($request));
+    }
+]);
 
 //ROTA DINAMICA
 // $obRota->get('/pagina/{idPagina}/{acao}', [

@@ -11,7 +11,7 @@
                         Aliens Abduction
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}/abductions_list">Report Abduction List</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/abductions">Report Abductions</a></li>
                         <li><a class="dropdown-item" href="{{URL}}/abductions_form">Report Abduction Form</a></li>
                     </ul>
                 </li>
