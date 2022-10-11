@@ -94,5 +94,20 @@ class Abductions
 
     return true;
   }
+    /**
+   * Método responsável por retornar depoimentos
+   * @param string $where
+   * @param string $order
+   * @param string $limit
+   * @param string $fields 
+   * @return PDOStatement
+   */
+  public static function getTestimonies(){
+    $rs = new Recordset();
+    $sql = "SELECT * FROM aliens_abduction";
+    $rs->FreeSql($sql);
+    return $rs->GeraDados();
+
+  }
   
 }
