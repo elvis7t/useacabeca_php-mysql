@@ -20,11 +20,11 @@
                         Elvis Store
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}view/es_form_addemail.php">Form Registration E-mail on List </a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/es_form_sendemail.php">Form Send E-mail</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/es_form_validation.php">Form Send E-mail with validation</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/es_form_remove_email_search.php">Form Remove E-mail Search</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/es_remove_emailList.php">List Remove E-mail List</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/emails.php">e-mail List</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/es_form_addemail.php">Form Registration E-mail on List </a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/es_form_sendemail.php">Form Send E-mail</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/es_form_validation.php">Form Send E-mail with validation</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/es_form_remove_email_search.php">Form Remove E-mail Search</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

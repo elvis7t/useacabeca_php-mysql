@@ -13,27 +13,27 @@ $obRota->get('/', [
 //ROTA LISTA DE ADBUÇOES
 $obRota->get('/abductions', [
     function ($request) {
-        return new Response(200, Pages\Abductions::getAbductions($request));
+        return new Response(200, Pages\Abduction::getAbductions($request));
     }
 ]);
 
 //ROTA FORM DE ADBUÇOES
 $obRota->get('/abductions_resp', [
     function () {
-        return new Response(200, Pages\Abductions_form::getAbductionsResp($request));
+        return new Response(200, Pages\Abduction::getAbductionsResp($request));
     }
 ]);
 //ROTA FORM DE ADBUÇOES
 $obRota->get('/abductions_form', [
     function () {
-        return new Response(200, Pages\Abductions_form::getAbductionsForm());
+        return new Response(200, Pages\Abduction::getAbductionsForm());
     }
 ]);
 
 //ROTA FORM DE ADBUÇOES
 $obRota->post('/abductions_form', [
     function ($request) {
-        return new Response(200, Pages\Abductions_form::InsertAbductionsForm($request));
+        return new Response(200, Pages\Abduction::InsertAbductionsForm($request));
     }
 ]);
 
