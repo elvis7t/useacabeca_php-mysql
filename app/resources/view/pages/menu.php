@@ -20,7 +20,7 @@
                         Elvis Store
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}/emails.php">e-mail List</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/store">e-mail List</a></li>
                         <li><a class="dropdown-item" href="{{URL}}/es_form_addemail.php">Form Registration E-mail on List </a></li>
                         <li><a class="dropdown-item" href="{{URL}}/es_form_sendemail.php">Form Send E-mail</a></li>
                         <li><a class="dropdown-item" href="{{URL}}/es_form_validation.php">Form Send E-mail with validation</a></li>

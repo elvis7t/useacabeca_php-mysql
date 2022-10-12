@@ -1,5 +1,6 @@
 <div class="container d-flex justify-content-center">
     <h1>{{titulo}}</h1>
+    <br />
 </div>
 <div class="form-group col-md-6 offset-md-3">
     <form method="post" action="">
@@ -17,7 +18,7 @@
             <tbody>
                 {{list}}
             </tbody>
-
         </table>
         <input type="submit" class="btn btn-xs btn-danger" name="submit" value="Deletar">
+    </form>
 </div>

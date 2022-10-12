@@ -44,22 +44,9 @@ $obRota->get('/abduction', [
     }
 ]);
 
-//ROTA DINAMICA
-// $obRota->get('/pagina/{idPagina}/{acao}', [
-//     function ($idPagina,$acao) {
-//         return new Response(200, 'Página' . $idPagina.'-'.$acao);
-//     }
-// ]);
-
-// //ROTA DEPOIMENTOS
-// $obRota->get('/depoimentos', [
-//     function ($request) {
-//         return new Response(200, Pages\Testimony::getTestimonies($request));
-//     }
-// ]);
-// //ROTA DEPOIMENTOS
-// $obRota->post('/depoimentos', [
-//     function ($request) {
-//         return new Response(200, Pages\Testimony::insertTestimony($request));
-//     }
-// ]);
+//ROTA FORM DE Elvis Store
+$obRota->get('/store', [
+    function ($request) {
+        return new Response(200, Pages\Store::getStore($request));
+    }
+]);
