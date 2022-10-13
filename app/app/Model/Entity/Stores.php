@@ -28,20 +28,20 @@ class Stores
    * @var string
    */
   public $email;
-  
+
   /**
    * Método responsável por cadastrar a instancia atual no banco de dados
    * @return boolean
    */
   public function cadastrar()
-  {    
+  {
     $rs = new recordset();
     //INSERE O DEPOIMENTOS NO DADOS
     $this->id = $rs->autocod("elist_id", "elvis_store");
     $dados['elist_id']         = $this->id;
     $dados['elist_firstname']  = $this->firstname;
-    $dados['elist_lastname']   = $this->lastname;   
-    $dados['elist_email']   = $this->email;    
+    $dados['elist_lastname']   = $this->lastname;
+    $dados['elist_email']   = $this->email;
     $rs->Insere($dados, "elvis_store");
 
     // echo "<pre>";
@@ -51,7 +51,7 @@ class Stores
 
     return true;
   }
-    /**
+  /**
    * Método responsável por retornar depoimentos
    * @param string $where
    * @param string $order
@@ -59,14 +59,17 @@ class Stores
    * @param string $fields 
    * @return PDOStatement
    */
-  public static function getTestimonies(){
+
+  public function sendEmais()
+  {
     $rs = new Recordset();
-    $sql = "SELECT * FROM aliens_abduction";
-    $rs->FreeSql($sql);
-    $rs->GeraDados();  
+    $this->id = $rs->autocod("elist_id", "elvis_store");
+    $dados['elist_id'] = $this->id;
+    $dados['elist_firtname'] = $this->elist_firtname;
+    $dados['elist_lastname'] = $this->elist_lastname;
+    $dados['elist_email'] = $this->elist_email;
+    $rs->Insere($dados, "elvis_store");
 
-    return  $rs->GeraDados();
-
+    return true;
   }
-  
 }

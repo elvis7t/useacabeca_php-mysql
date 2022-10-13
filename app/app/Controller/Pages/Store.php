@@ -3,7 +3,7 @@
 namespace App\controller\Pages;
 
 use \App\Utils\View;
-use \App\model\Entity\Stores as Entityclient;
+use \App\model\Entity\Stores as EntityClient;
 
 
 class Store extends Page
@@ -94,7 +94,7 @@ class Store extends Page
     public static function InsertClient($request)
     {
         $postVars = $request->getPostVars();
-        $obStore = new Entityclient;
+        $obStore = new EntityClient;
         $obStore->firstname = $postVars['firstname'];
         $obStore->lastname = $postVars['lastname'];
         $obStore->email = $postVars['email'];
@@ -102,17 +102,81 @@ class Store extends Page
 
         return self::getStore($request);
     }
-
+    /**
+     * Método responsável por deletar clientes selecionados
+     * @param  Resquest     
+     */
     public static function DeleteClient($request)
     {
 
-        foreach ($_POST['todelete'] as $deleteId) {    
+        foreach ($_POST['todelete'] as $deleteId) {
             require_once __DIR__ . '../../../Model/conf.php';
-        
+
             $sql = "DELETE FROM elvis_store WHERE elist_id = $deleteId";
             mysqli_query($con, $sql) or die(mysqli_error($con));
-            
         }
         return self::getStore($request);
+    }
+     /**
+     * Método responsável por carregar o conteudo da pagina
+     * @return string
+     */
+
+    public static function getClientFormAdd($request)
+    {
+        $content = View::render('pages/form_sendemail', [
+            'title' => 'Send Emails for Clients'
+        ]);
+        return parent::getPage('Form Send Emails - Use a Cabeça', $content);
+    }
+     /**
+     * Método responsável por enviar emails
+     * @param  Resquest
+     * @return string
+     */
+    public static function SendEmail($request){
+             
+            $content = View::render('pages/sendmails', [
+                'list' => self::getClientList($request),
+                'title'=> 'Send Emails for Clients',
+                'subtitle'=> $_POST['subject'],
+                'message'=> $_POST['message'],
+            ]);
+            // $content .= View::render('pages/store/sendmails', [               
+            //     'name' => $row['elist_firstname'],
+            //     'lastname' => $row['elist_lastname'],
+            //     'email' => $row['elist_email']
+            // ]);
+       
+        return parent::getPage('SendEmails - Use a Cabeça', $content);
+        
+    }
+     /**
+     * Método responsável por buscar email e deletar
+     * @param  Resquest
+     * @return string
+     */
+    public static function SearchEmail($request){
+        $content = View::render('pages/form_search', [
+            'title' => "Enter an email address to remove"
+        ]);
+        return parent::getPage('Search Emails - Use a Cabeça', $content);
+    }
+    /**
+     * Método responsável por deletar emails
+     * @param  Resquest
+     * @return string
+     */
+    public static function DeleteEmail($request){
+        require_once __DIR__ . '../../../Model/conf.php';
+        $deleteId = trim($_POST['email']);
+        
+        $sql = "DELETE FROM elvis_store WHERE elist_email = '$deleteId'";
+        // echo "<pre>";
+        // print_r($sql);
+        // echo "</pre>";
+        // exit;
+        mysqli_query($con, $sql);
+        return self::SearchEmail($request);
     }
 }

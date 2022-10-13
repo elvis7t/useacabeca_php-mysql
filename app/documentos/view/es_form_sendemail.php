@@ -36,7 +36,7 @@ require_once('../config/menu.php');
         }
     
         if((!empty($subject)) && (!empty($text))){
-            $sql ="SELECT * FROM email_list";
+            $sql ="SELECT * FROM elvis_store";
             $result = mysqli_query($con, $sql)or die(mysqli_error($con));
 
             while ($row = mysqli_fetch_assoc($result)){

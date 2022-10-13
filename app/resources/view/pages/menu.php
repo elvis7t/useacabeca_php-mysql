@@ -22,9 +22,8 @@
                     <ul class="dropdown-menu dropdown-menu-dark">
                         <li><a class="dropdown-item" href="{{URL}}/store">Client List</a></li>
                         <li><a class="dropdown-item" href="{{URL}}/form_client">Form Registration E-mail on List </a></li>
-                        <li><a class="dropdown-item" href="{{URL}}/es_form_sendemail.php">Form Send E-mail</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}/es_form_validation.php">Form Send E-mail with validation</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}/es_form_remove_email_search.php">Form Remove E-mail Search</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/form_sendemail">Form Send E-mail</a></li>                        
+                        <li><a class="dropdown-item" href="{{URL}}/form_search">Form Remove E-mail Search</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
