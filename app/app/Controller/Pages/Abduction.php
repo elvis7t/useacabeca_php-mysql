@@ -9,7 +9,7 @@ use \App\Model\Entity\Abductions as EntityAbduction;
 class Abduction extends Page
 {
      /** 
-     * Metodo resp por retornar o conteudo da Pagina
+     * Metodo resp por retornar oo itens da tabela
      * @return string 
      */
     public static function getAbductionItems()
@@ -59,7 +59,7 @@ class Abduction extends Page
         //CONEXÂO COM O BANCO
         require_once __DIR__ . '../../../Model/conf.php';
         //SELECIONA OS DADOS DA TABELA
-        $sql = "SELECT * FROM aliens_abduction WHERE aa_id =$var";
+        $sql = "SELECT * FROM aliens_abduction WHERE aa_id =$id";
         //PROCESSA OS DADOS
         $results = mysqli_query($con, $sql);
 
@@ -80,7 +80,7 @@ class Abduction extends Page
         return parent::getPage('Abduction - Use a Cabeça', $content);
     }
     /** 
-     * Metodo resp por retornar o conteudo da Pagina
+     * Metodo responsávvel por retornar uma pagina com os dados cadastrados
      * @return string 
      */
     public static function getAbductionsResp($request)
@@ -102,7 +102,7 @@ class Abduction extends Page
     }
 
     /** 
-     * Metodo resp por retornar o conteudo da Pagina
+     * Metodo resp por retornar o conteudo da Pagina de Formulário
      * @return string 
      */
     public static function getAbductionsForm()

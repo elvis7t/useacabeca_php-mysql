@@ -5,7 +5,7 @@
     <td>{{email}}</td>
     <td>
         <div class="button-group">
-            <a class="btn btn-xs btn-success" data-toggle='tooltip' data-placement='bottom' title='Detalhes' a href="{{URL}}/abduction?var={{id}}"><ion-icon  name="link-sharp"></ion-icon></a>
+            <a class="btn btn-xs btn-success" data-toggle='tooltip' data-placement='bottom' title='Detalhes' a href="{{URL}}/abduction?id={{id}}"><ion-icon  name="link-sharp"></ion-icon></a>
         </div>
     </td>
     <td>

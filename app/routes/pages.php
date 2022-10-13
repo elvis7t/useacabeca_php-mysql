@@ -44,9 +44,37 @@ $obRota->get('/abduction', [
     }
 ]);
 
-//ROTA FORM DE Elvis Store
+//ROTA ELVIS STORE 
 $obRota->get('/store', [
     function ($request) {
         return new Response(200, Pages\Store::getStore($request));
+    }
+]);
+
+//ROTA CLIENTE ELVIS STORE
+$obRota->get('/clint', [
+    function ($request) {
+        return new Response(200, Pages\Store::getClient($request));
+    }
+]);
+
+//ROTA DE CADASTRO DE EMAILS
+$obRota->get('/form_client', [
+    function ($request) {
+        return new Response(200, Pages\Store::getClientForm($request));
+    }
+]);
+
+//ROTA DE CADASTRO DE EMAILS
+$obRota->post('/form_client', [
+    function ($request) {
+        return new Response(200, Pages\Store::InsertClient($request));
+    }
+]);
+
+//ROTA PARA DELETAR EMAILS
+$obRota->post('/store', [
+    function ($request) {
+        return new Response(200, Pages\Store::DeleteClient($request));
     }
 ]);

@@ -24,22 +24,22 @@ class Abductions
    */
   public $lastname;
   /**
-   * Mensagem do depoimento
+   * When didi it happen
    * @var integer
    */
   public $whenithappened;
   /**
-   * Mensagem do depoimento
+   * How long were you gone
    * @var integer
    */
   public $howlong;
   /**
-   * Mensagem do depoimento
+   * howlong
    * @var integer
    */
   public $howmany;
   /**
-   * Mensagem do depoimento
+   * howlong
    * @var integer
    */
   public $aliendescription;
@@ -100,9 +100,9 @@ class Abductions
    * @param string $order
    * @param string $limit
    * @param string $fields 
-   * @return PDOStatement
+   * @return Geradados
    */
-  public static function getTestimonies(){
+  public static function getAbductionss(){
     $rs = new Recordset();
     $sql = "SELECT * FROM aliens_abduction";
     $rs->FreeSql($sql);

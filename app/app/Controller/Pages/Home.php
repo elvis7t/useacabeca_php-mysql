@@ -15,10 +15,10 @@ class Home extends Page
 
     public static function getHome()
     {
-        $obOrganization = new Organization;
+        
 
         $content = View::render('pages/home', [
-            'name' => $obOrganization->name            
+            'name' => 'Livro Use a Cabeça PHP & MYSQL'
         ]);
         // return 'Ola Mundo';
         return parent::getPage('Home - PRATICA', $content);

@@ -10,7 +10,7 @@ echo'<div class="d-flex justify-content-center">';
 echo $subject."<br />";
 echo $text."<br />";
 
-$sql ="SELECT * FROM email_list";
+$sql ="SELECT * FROM elvis_store";
 $result = mysqli_query($con, $sql)or die(mysqli_error());
 // $rows[] = $row;
 while ($row = mysqli_fetch_assoc($result)){
