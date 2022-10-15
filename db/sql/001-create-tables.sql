@@ -98,10 +98,10 @@ INSERT INTO `aliens_abduction` (`aa_id`, `aa_firstname`, `aa_lastname`, `aa_when
 -- --------------------------------------------------------
 
 --
--- Estrutura da tabela `email_list`
+-- Estrutura da tabela `elvis_store`
 --
 
-CREATE TABLE `email_list` (
+CREATE TABLE `elvis_store` (
   `elist_id` int NOT NULL,
   `elist_firstname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `elist_lastname` varchar(30) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -112,7 +112,7 @@ CREATE TABLE `email_list` (
 -- Extraindo dados da tabela `email_list`
 --
 
-INSERT INTO `email_list` (`elist_id`, `elist_firstname`, `elist_lastname`, `elist_email`) VALUES
+INSERT INTO `elvis_store` (`elist_id`, `elist_firstname`, `elist_lastname`, `elist_email`) VALUES
 (18, 'ELVIS', 'DA SILVA', 'elvis7t@gmail.com');
 
 -- --------------------------------------------------------

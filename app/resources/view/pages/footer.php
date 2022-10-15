@@ -29,4 +29,4 @@ $(document).ready(function () {
     $('#example').DataTable();
 });
 </script>
-<script src="../js/action.js"></script>
+<script src="../../../js/action.js"></script>

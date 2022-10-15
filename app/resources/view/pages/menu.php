@@ -31,9 +31,9 @@
                         Guitar Wars
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}view/gw_list_hiscores.php">Guitar Wars App</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/gw_form_addscore.php">Form add Score</a></li>
-                        <li><a class="dropdown-item" href="{{URL}}view/gw_admin_listscore.php">Admin add Score</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/hiscores">Guitar Wars App</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/form_hiscore">Form Score</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/admin_guitar_wars">Admin </a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">

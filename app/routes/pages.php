@@ -106,3 +106,45 @@ $obRota->post('/form_search', [
         return new Response(200, Pages\Store::DeleteEmail($request));
     }
 ]);
+
+//RORA HISCORES
+$obRota->get('/hiscores', [
+   function($request) {
+       return new Response(200, Pages\GuitarWars::getHiscore($request));
+   }
+]);
+
+//ROTA FORM HISCORES
+$obRota->get('/form_hiscore', [
+    function($request) {
+        return new Response(200, Pages\GuitarWars::getFormHiscore($request));
+    }
+]);
+
+//ROTA CADASTRA HISCORES
+$obRota->post('/form_hiscore', [
+    function($request) {
+        return new Response(200, Pages\GuitarWars::InsertHiscore($request));
+    }
+]);
+
+//ROTA ADMIN HISCORES
+$obRota->get('/admin_guitar_wars', [
+    function($request) {
+        return new Response(200, Pages\GuitarWars::getAdminHiscore($request));
+    }
+]);
+
+//ROTA ADMIN HISCORES
+$obRota->get('/moderar', [
+    function($request) {
+        return new Response(200, Pages\GuitarWars::getModerarHiscore($request));
+    }
+]);
+
+//ROTA MODERAR
+$obRota->post('/moderar', [
+    function($request) {
+        return new Response(200, Pages\GuitarWars::updateModerar($request));
+    }
+]);
