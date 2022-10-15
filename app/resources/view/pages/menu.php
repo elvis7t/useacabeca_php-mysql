@@ -51,7 +51,7 @@
                         Test
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}view/test.php">Testar</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/documentos/index.php">Testar</a></li>
                     </ul>
                 </li>
 
