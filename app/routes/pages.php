@@ -148,3 +148,10 @@ $obRota->post('/moderar', [
         return new Response(200, Pages\GuitarWars::updateModerar($request));
     }
 ]);
+
+//ROTA Mismatch
+$obRota->get('/mismatch', [
+    function($request) {
+        return new Response(200, Pages\Mismatch::getMismatch($request));
+    }
+]);
