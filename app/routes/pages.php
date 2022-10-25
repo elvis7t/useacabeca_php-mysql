@@ -155,3 +155,35 @@ $obRota->get('/mismatch', [
         return new Response(200, Pages\Mismatch::getMismatch($request));
     }
 ]);
+
+//ROTA ADD USER MISMATCH
+$obRota->get('/form_mismatchuser', [
+    function($request) {
+        return new Response(200, Pages\Mismatch::getFormMismatchUser($request));
+    }
+]);
+//ROTA POSTAR usuario
+$obRota->post('/form_mismatchuser', [
+    function($request) {
+        return new Response(200, Pages\Mismatch::insertMismatchUser($request));
+    }
+]);
+//RORA DE VER PERFIL DE USUARIOS
+$obRota->get('/viewprofile', [
+    function($request){
+        return  new Response(200, Pages\Mismatch::getUser($request));
+    }
+]);
+//RORA DE EDITARPERFIL DE USUARIOS
+$obRota->get('/editprofile', [
+    function($request){
+        return  new Response(200, Pages\Mismatch::getUserMismatch($request));
+    }
+]);
+
+// //RORA DE EDITARPERFIL DE USUARIOS
+$obRota->post('/editprofile', [
+    function($request){
+        return  new Response(200, Pages\Mismatch::setUser($request));
+    }
+]);

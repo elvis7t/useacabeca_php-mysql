@@ -10,21 +10,4 @@
 <h3>Last Members</h3>
 </div>
 
-<div class="col-md-6 offset-md-3">
-    <img src="../../../image/john _dewey.png" width="100px" alt="John Dewey" class="img-thumbnail img-responsive">
-    <a href="{{URL}}/editprofile" class="">John Dewey</a>
-</div>
-
-<div class="col-md-6 offset-md-3">
-    <img src="../../../image/hanna_arendt.png" width="100px" alt="John Dewey" class="img-thumbnail img-responsive">
-    <a href="{{URL}}/editprofile" class="">Hanna Arendt</a>
-</div>
-<div class="col-md-6 offset-md-3">
-    <img src="../../../image/john _dewey.png" width="100px" alt="John Dewey" class="img-thumbnail img-responsive">
-    <a href="{{URL}}/editprofile" class="">John Dewey</a>
-</div>
-
-<div class="col-md-6 offset-md-3">
-    <img src="../../../image/hanna_arendt.png" width="100px" alt="John Dewey" class="img-thumbnail img-responsive">
-    <a href="{{URL}}/editprofile" class="">Hanna Arendt</a>
-</div>
+{{list}}

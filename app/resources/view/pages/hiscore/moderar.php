@@ -13,12 +13,12 @@
     <div class="form-group col-mb-6 offset">
         <form method="post" action="" class="row g-3">
             <div class="col-auto">
-                <input class="form-check-input" type="radio" name="confirm" value="a" id="flexRadioDefault1" {{check2}}>
+                <input class="form-check-input" type="radio" name="gender" value="a" id="flexRadioDefault1" {{check2}}>
                 <label class="form-check-label" for="flexRadioDefault1"> Aprovado
                 </label>
             </div>
             <div class="col-auto">
-                <input class="form-check-input" type="radio" name="confirm" value="n" id="flexRadioDefault2" {{check}}>
+                <input class="form-check-input" type="radio" name="gender" value="n" id="flexRadioDefault2" {{check}}>
                 <label class="form-check-label" for="flexRadioDefault2">Nâo aprovado
                 </label>
             </div>

@@ -77,26 +77,26 @@ class Recordset {
 		desconecta($this->link);
 	}
 	/*---------------------------------------------------------------------------------------------*/
-	// function Seleciona($campos="*", $tabela, $where=1, $group="", $order="", $limit="" ){
-	// 	if($where <> 1){$whr = $where;}
+	function Seleciona($tabela, $campos="*",  $where=1, $group="", $order="", $limit="" ){
+		if($where <> 1){$whr = $where;}
 
-	// 	$sql = "SELECT ";
-	// 	$sql.= $campos;
-	// 	$sql.=" FROM ".$tabela;
-	// 	$sql.=" WHERE ". $whr;
+		$sql = "SELECT ";
+		$sql.= $campos;
+		$sql.=" FROM ".$tabela;
+		$sql.=" WHERE ". $whr;
 
-	// 	if($group)
-	// 		$sql.= " GROUP BY ".$group;
-	// 	if($order)
-	// 		$sql.= " ORDER BY ".$order;
-	// 	if($limit)
-	// 		$sql.= " LIMIT ".$limit;
+		if($group)
+			$sql.= " GROUP BY ".$group;
+		if($order)
+			$sql.= " ORDER BY ".$order;
+		if($limit)
+			$sql.= " LIMIT ".$limit;
 
-	// 	$this->sql = $sql;
-	// 	$this->result = mysqli_query($this->link, $this->sql) or die(mysqli_error($this->link));
-	// 	$this->linhas = mysqli_num_rows($this->result);
-	// /*------------------------------------------------------------------------------------------------*/
-	// }
+		$this->sql = $sql;
+		$this->result = mysqli_query($this->link, $this->sql) or die(mysqli_error($this->link));
+		$this->linhas = mysqli_num_rows($this->result);
+	/*------------------------------------------------------------------------------------------------*/
+	}
 	Function FreeSQL($sql){
 		$this->sql = $sql;
 		$this->result = mysqli_query($this->link, $this->sql) or die(mysqli_error($this->link));
