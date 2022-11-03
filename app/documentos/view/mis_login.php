@@ -20,8 +20,8 @@ if (!isset($_SESSION['user_id'])) {
                 $row = mysqli_fetch_array($data);
                 $_SESSION['user_id'] = $row['user_id'];
                 $_SESSION['user_name'] = $row['user_name'];
-                // setcookie ('user_id', $row['user_id']);
-                // setcookie ('user_name', $row['user_name']);
+                // setcookie ('user_id', $row['user_id'], time() + (60*60*24*30));//expira em 30 dias
+                // setcookie ('user_name', $row['user_name'], time() + (60*60*24*30));//expira em 30 dias
                 $home_url = 'http://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['PHP_SELF']) . '/mis_index.php';
                 header('location:' . $home_url);
             } else {

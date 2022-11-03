@@ -1,10 +1,12 @@
 <?php
 session_start();
 if(isset($_SESSION['user_id'])){
+    //apaga as variaveis de sessao
     $_SESSION = array();
-    if(isset($_COKIE[session_name()])){
-        setcookie (session_name(),'',time()-3600);
-    }
+      //apaga as variaveis de sessao
+    // if(isset($_COKIE[session_name()])){
+    //     setcookie (session_name(),'',time()-3600);
+    // }
     // setcookie('user_id', time()-3600);
     // setcookie('user_name', time()-3600);
     session_destroy();

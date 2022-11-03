@@ -3,7 +3,6 @@ require_once('../config/session.php');
 require_once('../config/menu.php');
 require_once('../model/conf.php');
 extract($_GET);
-
 if (!isset($_SESSION['user_id'])){
     echo ('<p class="d-flex justify-content-center bg-success text-light"> Please <a href="mis_login.php"> log in</a> To access this page.</p>');
     exit();
@@ -19,7 +18,6 @@ if (!isset($_SESSION['user_id'])){
 <div class="col-md-6 offset-md-3">
 
     <?php
-    
     $sql = "SELECT * FROM mismatch_user WHERE user_id =" . $id;
     $result = mysqli_query($con, $sql);
     while ($row = mysqli_fetch_array($result)) {
