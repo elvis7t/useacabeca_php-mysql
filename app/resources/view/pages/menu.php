@@ -48,10 +48,10 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Test
+                        Procedural
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}/documentos/index.php">Testar</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/documentos/index.php">Original</a></li>
                     </ul>
                 </li>
 

@@ -60,8 +60,7 @@
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Mismatch
           </a>
-          <ul class="dropdown-menu dropdown-menu-dark">
-            <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_form.php">Form</a></li>                        
+          <ul class="dropdown-menu dropdown-menu-dark">                                   
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_index.php">Index</a></li>                        
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_login.php">Login</a></li>                        
            
