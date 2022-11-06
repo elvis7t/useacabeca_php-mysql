@@ -1,66 +1,62 @@
 <?php
 require_once('../config/menu.php');
-require_once('../model/conf.php');
+require_once('../model/Recordset.php');
+$rs = new Recordset();
 ?>
 
 <body>
-    <div class="form-group d-flex justify-content-center">
+    <div class="d-flex justify-content-center">
         <h1>Teste</h1>
     </div>
+    <div class="container">
+        <form class="form-horizontal" method="post" action="<?= $_SERVER['PHP_SELF']; ?>">
+            <?php
+            if (isset($_POST['submit'])) {
+                foreach ($_POST['todelete'] as $item) {
+                    echo '<div class="alert alert-primary" role="alert">';
+                    echo "Item delected is " . $item;
+                    echo '</div>';
+                    $rs->delete('aliens_abduction', 'aa_id = ' . $item);
+                }
+            }
 
-    <div class="form-group d-flex justify-content-center">
-        <form class="form-horizontal" method="post" action="<?=$_SERVER['PHP_SELF'];?>">
-            <table class="table table-striped table-bordered" id="example">
+            ?>
+            <table class="table table-striped" id="example">
                 <thead>
-                    <th>id</th>
-                    <th>name</th>
-                    <th>action</th>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Whenithappened</th>
+                    <th>Howlong</th>
+                    <th>Action</th>
                 </thead>
-
                 <tbody>
+
                     <?php
-                    if (isset($_POST['submit'])) {
-                        foreach ($_POST['todelete'] as $item) {
-                            $sql = "DELETE FROM aliens_abduction WHERE aa_id = $item";
-                            mysqli_query($con, $sql);
-                            echo "Item" . $item . " foi deletado";
-                        }
-                        $sql = "SELECT * FROM aliens_abduction";
-                        $res = mysqli_query($con, $sql);
-                        while ($row = mysqli_fetch_array($res)) {
-                            echo "<tr>";
-                            echo "<td>".$row['aa_id']."</td>";
-                            echo "<td>".$row['aa_firstname']."</td>";
-                            echo "<td>"; 
-                            echo "<div class='form-ckeck form-switch'>";
-                            echo "<input type='checkbox' class='form-check-input' role='switch' nama='todelete[]' value='".$row['aa_id']."'>";
-                            echo "</div>";
-                            echo "</td>";
-                            echo "</tr>";
-                        }
-                    } else {
-                        $sql = "SELECT * FROM aliens_abduction";
-                        $res = mysqli_query($con, $sql);
-                        while ($row = mysqli_fetch_array($res)) {
-                            echo "<tr>";
-                            echo "<td>".$row['aa_id']."</td>";
-                            echo "<td>".$row['aa_firstname']."</td>";
-                            echo "<td>"; 
-                            echo "<div class='form-ckeck form-switch'>";
-                            echo "<input type='checkbox' class='form-check-input' role='switch' nama='todelete[]' value='".$row['aa_id']."'>";
-                            echo "</div>";
-                            echo "</td>";
-                            echo "</tr>";
-                        }
-                    }
+                    $rs->Select('aliens_abduction');
+                    while ($rs->Datagenerate()) {
+                    ?>
+                        <tr>
+                            <td><?= $rs->fld("aa_id"); ?></td>
+                            <td><?= $rs->fld("aa_firstname"); ?></td>
+                            <td><?= $rs->fld("aa_whenithappened"); ?></td>
+                            <td><?= $rs->fld("aa_howlong"); ?></td>
+                            <td>
+                                <div class="form-check form-switch">
+                                    <input type="checkbox" class="form-check-input" name="todelete[]" role="switch" value="<?= $rs->fld("aa_id"); ?>">
+                                </div>
+                            </td>
+                        </tr>
+                    <?php
+                    };
                     ?>
                 </tbody>
             </table>
-            <div class="col-md-12">
-                <button type="submit" name="submit" class="btn btn-danger">Deletar</button>
+            <div class="container">
+                <button type="submit" class="btn btn-danger" name="submit">Deletar</button>
             </div>
         </form>
     </div>
+
 </body>
 <?php
 require_once('../config/footer.php');
