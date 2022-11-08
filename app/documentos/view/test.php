@@ -14,9 +14,9 @@ $rs = new Recordset();
             if (isset($_POST['submit'])) {
                 foreach ($_POST['todelete'] as $item) {
                     echo '<div class="alert alert-primary" role="alert">';
-                    echo "Item delected is " . $item;
+                    echo "Item delected is $item";
                     echo '</div>';
-                    $rs->delete('aliens_abduction', 'aa_id = ' . $item);
+                    $rs->delete('aliens_abduction', "aa_id = $item");
                 }
             }
 
@@ -32,8 +32,10 @@ $rs = new Recordset();
                 <tbody>
 
                     <?php
-                    $rs->Select('aliens_abduction');
-                    while ($rs->Datagenerate()) {
+                    $sql = "SELECT * FROM aliens_abduction";
+                    $rs->RunSql($sql);
+                  
+                    while ($rs->DataGenerator()) {
                     ?>
                         <tr>
                             <td><?= $rs->fld("aa_id"); ?></td>

@@ -1,8 +1,8 @@
 <?php
 date_default_timezone_set('America/Sao_paulo');
 
-class Connection{
-
+class Connection
+{
     /**
      * Hostname of the connection
      * @const 
@@ -33,23 +33,28 @@ class Connection{
      */
     const DB_CHARSET = 'utf8';
 
-     /**
-     *Method responsible for connecting to the database
+    /**
+     * Method responsible for connecting to the database
+     * @return void
      */
-
-    public $link;
-
-    public static function Conect(){
-        $link = mysqli_connect(self::DB_HOSTNAME, self::DB_USERNAME, self::DB_PASSWORD, self::DB_DATABASE) or die(mysqli_connect_error());
-        mysqli_set_charset($link, self::DB_CHARSET) or die(mysqli_error($link));
-        return $link;
+    public static function setConnect()
+    {
+        try {
+            $link = mysqli_connect(self::DB_HOSTNAME, self::DB_USERNAME, self::DB_PASSWORD, self::DB_DATABASE) or die(mysqli_connect_error());
+            mysqli_set_charset($link, self::DB_CHARSET) or die(mysqli_error($link));
+            return $link;
+        } catch (mysqli_sql_exception $e) {
+            die('ERROR: ' . $e->getMessage());
+        }
     }
 
-      /**
-     *Method responsible for Disconnecting to the database
+    /**
+     * *Method responsible for Disconnecting to the database
+     * @param mysqli $link
+     * @return void
      */
-    public function Desconect(){
-        mysqli_close($this->link);
+    public function getDesconnect($link)
+    {
+        mysqli_close($link);
     }
-
 }

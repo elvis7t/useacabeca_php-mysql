@@ -3,45 +3,134 @@
 require 'Connection.php';
 class Recordset
 {
+	/**
+	 * Result 	 
+	 * @var string
+	 */
+	private $result;
+
+	/**	 
+	 *Registres
+	 * @var array
+	 */
+	private $regs;
 
 	/**
-	 * table
-	 * @var $table
+	 * Link of the connection
+	 * @var string
 	 */
+	private $link;
 
-	private $result;
-	private $lines;
-	private $table;
-	private $sql;
-	private $regs;
-	private  $link;
-
+	/**
+	 * Method responsible for set Connection
+	 */
 	function __construct()
 	{
-		$this->link = Connection::Conect();
+		$this->link = Connection::setConnect();
 		return $this->link;
 	}
 
 	/**
 	 * Method responsible for runing the sql query
-	 * @param mixed $sql
+	 * @param mysqli $sql
 	 * @return void	 
 	 */
-	function RunSql($sql): void
+	public function RunSql($sql): void
 	{
-		mysqli_query($this->link, $sql) or die(mysqli_error($this->link));
+		$this->result = mysqli_query($this->link, $sql) or die(mysqli_error($this->link));
 	}
 
 	/**
-	 * Method responsible for generating the datas
-	 * @param mixed $table
-	 * @param mixed $whr
+	 * Method responsible for generating the datas	 
 	 * @return void	 
 	 */
-	public function Datagenerate()
+	public function DataGenerator()
 	{
-		return $this->regs = mysqli_fetch_assoc($this->result);
-		desconecta($this->link);
+		return $this->regs = mysqli_fetch_array($this->result);
+		//CLOSE CONNECTION
+		$ob =  new Connection();
+		$ob->getDesconnect($this->link);
+	}
+
+	/**
+	 * Method responsible for selectioning the table's filds	 *
+	 * @param array $field
+	 * @return mixed
+	 */
+	public function fld($field): mixed
+	{
+		return $this->regs[$field];
+	}
+
+	/**
+	 * Method responsible for Insert data into the table
+	 * @param array $values
+	 * @param string $table
+	 * @return sql
+	 */
+	public function Insert($values, $table)
+	{
+		//QUERY DATA
+		$fields = array_keys($values);
+
+		//MOONT A QUERY
+		$sql = "INSERT INTO $table (" . implode(',', $fields) . ") VALUES ('" . implode("','", $values) . "')";
+
+		//RETURN RUN SQL
+		return self::RunSql($sql);
+	}
+
+	/**	 
+	 *Method responsible for selectioning the datas
+	 * @param string $table
+	 * @param string $where
+	 * @param string $order
+	 * @param string $limit
+	 * @param string $fields
+	 * @return sql
+	 */
+	public function Select($table, $where = null, $order = null, $limit = null, $fields = '*')
+	{
+		//DATES OF THE QUERY
+		$where = strlen($where) ? 'WHERE ' . $where : '';
+		$order = strlen($order) ? 'ORDER BY ' . $order : '';
+		$limit = strlen($limit) ? 'LIMIT ' . $limit : '';
+
+		//SET UP A QUERY		
+		$sql = "SELECT $fields FROM $table $where $order $limit";
+
+		//RUN DE QUERY
+		$this->result = mysqli_query($this->link, $sql);
+
+		//RUN DE QUERY
+		return $this->result;
+	}
+
+	/**	 
+	 * Method responsible for updating the datas
+	 * @param array $filds
+	 * @param string $table
+	 * @param string $where
+	 * @return bol
+	 */
+	public function Update($filds, $table, $where)
+	{
+		//MOUNT QUERY
+		$sql = "UPDATE $table SET ";
+		foreach ($filds as $fild => $date) {
+			if (is_string($date))
+				$sql .= $fild . ' = "' . $date . '", ';
+			else
+				$sql .= $fild . " = " . $date . ", ";
+		}
+		$sql = substr($sql, 0, -2);
+		$sql .= " WHERE " . $where;
+
+		//RUN QUERY
+		$this->RunSql($sql);
+
+		//RETURN SUCCESS
+		return true;
 	}
 
 	/**
@@ -50,38 +139,41 @@ class Recordset
 	 * @param mixed $whr
 	 * @return void
 	 */
-	function Delete($table, $whr): void
-	{		
-		$sql = "DELETE FROM " . $table;
-		$sql .= " WHERE " . $whr;
-		$this->sql = $sql;
+	public function Delete($table, $whr): void
+	{
+		$sql = "DELETE FROM $table WHERE $whr";
 
-		$this->RunSql($this->sql);
-		desconecta($this->link);
+		// RUN SQL		
+		$this->RunSql($sql);
 	}
 
 	/**
-	 * Method responsible for selectioning the data
-	 * @param mixed $table
-	 * @return void
+	 * Method responsible for selectioning a fild of the table
+	 * @param string $table
+	 * @param string $where
+	 * @param string $field
+	 * @return string
 	 */
-	public function Select($table): void
+	public function getFild($table, $where, $field)
 	{
-		$sql = "SELECT * FROM ";
-		$sql .= $table;
-
-		$this->sql = $sql;
-		$this->result = mysqli_query($this->link, $this->sql);
-		$this->lines = mysqli_num_rows($this->result);
+		self::Select($table, $where, '', '', $field);
+		self::DataGenerator();
+		return $this->fld($field);
 	}
 
 	/**
-	 * Method responsible for selectioning the table's filds
+	 * Method responsible for generated a auto-increment on the table
+	 * @param mixed $fild
 	 * @param mixed $table
-	 * @return void
+	 * @return int $cod
 	 */
-	public function fld($field): mixed
+	public function setAutoCode($fild, $table)
 	{
-		return $this->regs[$field];
+		$this->RunSql("SELECT " . $fild . " FROM " . $table . " ORDER BY " . $fild . " DESC");
+		$this->DataGenerator();
+		$cod = $this->fld($fild) + 1;
+
+		//RETURN ID
+		return $cod;
 	}
 }

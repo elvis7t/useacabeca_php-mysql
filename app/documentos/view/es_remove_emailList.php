@@ -27,7 +27,7 @@ require_once('../config/menu.php');
                         }   
                     echo 'Clientes removidos.<br />';
                     }
-                    $sql = "SELECT * FROM email_list";
+                    $sql = "SELECT * FROM elvis_store";
                     $result = mysqli_query($con, $sql)or die(mysqli_error($con));
                     $row = array();
                     
