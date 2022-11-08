@@ -4,7 +4,7 @@
   <?php
   date_default_timezone_set('America/Sao_paulo');
   error_reporting(E_ALL & E_NOTICE & E_USER_WARNING);
-  $hosted = "http://localhost:85/documentos/";
+  $hosted = "http://localhost:85/src/";
   ?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -63,6 +63,8 @@
           <ul class="dropdown-menu dropdown-menu-dark">                                   
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_index.php">Index</a></li>                        
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_login.php">Login</a></li>                        
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_form_topics.php">Topics form</a></li>
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_list_topics.php">Topics List</a></li>                               
            
           </ul>
         </li>

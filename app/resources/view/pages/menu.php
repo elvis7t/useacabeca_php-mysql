@@ -51,7 +51,7 @@
                         Procedural
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark">
-                        <li><a class="dropdown-item" href="{{URL}}/documentos/index.php">Original</a></li>
+                        <li><a class="dropdown-item" href="{{URL}}/src/index.php">Original</a></li>
                     </ul>
                 </li>
 
