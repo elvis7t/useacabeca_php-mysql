@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81023bc9ccf5dc6f66cc54d9ea0d55bc",
+    "content-hash": "5fc284fd6390fd2a4c91c9a6767e33dc",
     "packages": [
         {
             "name": "cakephp/core",
@@ -235,6 +235,63 @@
                 "source": "https://github.com/cakephp/utility"
             },
             "time": "2022-10-10T18:01:10+00:00"
+        },
+        {
+            "name": "fzaninotto/faker",
+            "version": "v1.5.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/fzaninotto/Faker.git",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/fzaninotto/Faker/zipball/d0190b156bcca848d401fb80f31f504f37141c8d",
+                "reference": "d0190b156bcca848d401fb80f31f504f37141c8d",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.0",
+                "squizlabs/php_codesniffer": "~1.5"
+            },
+            "suggest": {
+                "ext-intl": "*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.5.x-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Faker\\": "src/Faker/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "François Zaninotto"
+                }
+            ],
+            "description": "Faker is a PHP library that generates fake data for you.",
+            "keywords": [
+                "data",
+                "faker",
+                "fixtures"
+            ],
+            "support": {
+                "issues": "https://github.com/fzaninotto/Faker/issues",
+                "source": "https://github.com/fzaninotto/Faker/tree/master"
+            },
+            "abandoned": true,
+            "time": "2015-05-29T06:29:14+00:00"
         },
         {
             "name": "psr/container",
@@ -1354,86 +1411,6 @@
                 }
             ],
             "time": "2022-10-10T09:34:08+00:00"
-        },
-        {
-            "name": "william-costa/database-manager",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/william-costa/database-manager.git",
-                "reference": "ed871363f27251a882b9e5dc036dcac566b271c4"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/william-costa/database-manager/zipball/ed871363f27251a882b9e5dc036dcac566b271c4",
-                "reference": "ed871363f27251a882b9e5dc036dcac566b271c4",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "WilliamCosta\\DatabaseManager\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "William Costa",
-                    "email": "canalwdev@gmail.com"
-                }
-            ],
-            "description": "A simple library for managing database connections, results pagination and building queries in PHP.",
-            "support": {
-                "issues": "https://github.com/william-costa/database-manager/issues",
-                "source": "https://github.com/william-costa/database-manager/tree/v0.1.0"
-            },
-            "time": "2021-03-19T18:51:35+00:00"
-        },
-        {
-            "name": "william-costa/dot-env",
-            "version": "v0.1.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/william-costa/dot-env.git",
-                "reference": "e5eb9b0384b57f2812215fab0e3853c16a4b368e"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/william-costa/dot-env/zipball/e5eb9b0384b57f2812215fab0e3853c16a4b368e",
-                "reference": "e5eb9b0384b57f2812215fab0e3853c16a4b368e",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "WilliamCosta\\DotEnv\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "GPL-3.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "William Costa",
-                    "email": "canalwdev@gmail.com"
-                }
-            ],
-            "description": "A simple library for managing environment variables in PHP.",
-            "support": {
-                "issues": "https://github.com/william-costa/dot-env/issues",
-                "source": "https://github.com/william-costa/dot-env/tree/v0.1.0"
-            },
-            "time": "2021-03-19T19:28:14+00:00"
         }
     ],
     "packages-dev": [],
@@ -1444,5 +1421,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

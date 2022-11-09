@@ -33,7 +33,7 @@ $rs = new Recordset();
 
                     <?php
                     $sql = "SELECT * FROM aliens_abduction";
-                    $rs->RunSql($sql);
+                    $rs->Execute($sql);
                   
                     while ($rs->DataGenerator()) {
                     ?>

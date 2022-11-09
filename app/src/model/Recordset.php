@@ -35,7 +35,7 @@ class Recordset
 	 * @param mysqli $sql
 	 * @return void	 
 	 */
-	public function RunSql($sql): void
+	public function Execute($sql): void
 	{
 		$this->result = mysqli_query($this->link, $sql) or die(mysqli_error($this->link));
 	}
@@ -77,7 +77,7 @@ class Recordset
 		$sql = "INSERT INTO $table (" . implode(',', $fields) . ") VALUES ('" . implode("','", $values) . "')";
 
 		//RETURN RUN SQL
-		return self::RunSql($sql);
+		return self::Execute($sql);
 	}
 
 	/**	 
@@ -127,7 +127,7 @@ class Recordset
 		$sql .= " WHERE " . $where;
 
 		//RUN QUERY
-		$this->RunSql($sql);
+		$this->Execute($sql);
 
 		//RETURN SUCCESS
 		return true;
@@ -144,7 +144,7 @@ class Recordset
 		$sql = "DELETE FROM $table WHERE $whr";
 
 		// RUN SQL		
-		$this->RunSql($sql);
+		$this->Execute($sql);
 	}
 
 	/**
@@ -169,7 +169,7 @@ class Recordset
 	 */
 	public function setAutoCode($fild, $table)
 	{
-		$this->RunSql("SELECT " . $fild . " FROM " . $table . " ORDER BY " . $fild . " DESC");
+		$this->Execute("SELECT " . $fild . " FROM " . $table . " ORDER BY " . $fild . " DESC");
 		$this->DataGenerator();
 		$cod = $this->fld($fild) + 1;
 
