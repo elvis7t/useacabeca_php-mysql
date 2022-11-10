@@ -1,6 +1,9 @@
 <?php
 
-require 'Connection.php';
+namespace ElvisLeite\RecordSetDatabase;
+
+use ElvisLeite\RecordSetDatabase\Connection;
+use ElvisLeite\RecordSetDatabase\Formatter;
 
 class Recordset
 {
@@ -54,7 +57,7 @@ class Recordset
 	}
 
 	/**
-	 * Method responsible for selectioning the table's filds	
+	 * Method responsible for selectioning the table's filds	 *
 	 * @param array $field
 	 * @return mixed
 	 */
@@ -68,20 +71,19 @@ class Recordset
 	 * @param string $field
 	 * @return string
 	 */
-	public function formFld($field):string
+	public function formFld($field): string
 	{
 		return Formatter::setTimeDate(self::fld($field));
-		
 	}
-	
+
 	/**
 	 * Method responsible for handling the date field in the format date: time Brazil
 	 * @param string $field
 	 * @return string
 	 */
-	public function formMonthFld($field):string
+	public function formMonthFld($field): string
 	{
-		return Formatter::setMonthformat(self::fld($field));		
+		return Formatter::setMonthformat(self::fld($field));
 	}
 
 	/**
@@ -176,7 +178,7 @@ class Recordset
 	 * @param string $field
 	 * @return string
 	 */
-	public function getFild($table, $where, $field):string
+	public function getFild($table, $where, $field): string
 	{
 		self::Select($table, $where, '', '', $field);
 		self::DataGenerator();
@@ -189,7 +191,7 @@ class Recordset
 	 * @param mixed $table
 	 * @return int $cod
 	 */
-	public function setAutoCode($fild, $table):int
+	public function setAutoCode($fild, $table): int
 	{
 		$this->Execute("SELECT " . $fild . " FROM " . $table . " ORDER BY " . $fild . " DESC");
 		$this->DataGenerator();

@@ -8,6 +8,8 @@
     "require": {
         "william-costa/dot-env": "^0.1.0",
         "william-costa/database-manager": "^0.1.0",
-        "robmorgan/phinx": "^0.13.1"        
+        "robmorgan/phinx": "^0.13.1",
+        "elvis7t/recordset-database": "^1.0",
+        "elvis-leite/recordset-database": "^1.0"        
     }
 }

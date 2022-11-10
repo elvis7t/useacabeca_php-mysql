@@ -1,0 +1,20 @@
+{
+    "name": "elvis-leite/recordset-database",
+    "description": "A simple library for managing database connections and building queries in PHP.",
+    "type": "library",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Elvis Leite",
+            "email": "elvis7t@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "ElvisLeite\\RecordSetDatabase\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.0"
+    }
+}

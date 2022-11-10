@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "81023bc9ccf5dc6f66cc54d9ea0d55bc",
+    "content-hash": "f69de32de2bdebe97440b5dd1b4e4080",
     "packages": [
         {
             "name": "cakephp/core",
@@ -235,6 +235,86 @@
                 "source": "https://github.com/cakephp/utility"
             },
             "time": "2022-10-10T18:01:10+00:00"
+        },
+        {
+            "name": "elvis-leite/recordset-database",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elvis7t/recordset-database.git",
+                "reference": "99100537f0e322060715c6c63c20d0026971d2f6"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elvis7t/recordset-database/zipball/99100537f0e322060715c6c63c20d0026971d2f6",
+                "reference": "99100537f0e322060715c6c63c20d0026971d2f6",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElvisLeite\\RecordSetDatabase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Elvis Leite",
+                    "email": "elvis7t@gmail.com"
+                }
+            ],
+            "description": "A simple library for managing database connections, results pagination and building queries in PHP.",
+            "support": {
+                "issues": "https://github.com/elvis7t/recordset-database/issues",
+                "source": "https://github.com/elvis7t/recordset-database/tree/v1.0"
+            },
+            "time": "2022-11-10T19:22:41+00:00"
+        },
+        {
+            "name": "elvis7t/recordset-database",
+            "version": "v1.0.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/elvis7t/recordset-database.git",
+                "reference": "20988302b31da7305fa07cf2b0142099e0688fec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/elvis7t/recordset-database/zipball/20988302b31da7305fa07cf2b0142099e0688fec",
+                "reference": "20988302b31da7305fa07cf2b0142099e0688fec",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "ElvisLeite\\RecordSetDatabase\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-3.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "Elvis Leite",
+                    "email": "elvis7t@gmail.com"
+                }
+            ],
+            "description": "A simple library for managing database connections, results pagination and building queries in PHP.",
+            "support": {
+                "issues": "https://github.com/elvis7t/recordset-database/issues",
+                "source": "https://github.com/elvis7t/recordset-database/tree/v1.0.1"
+            },
+            "time": "2022-11-10T12:00:26+00:00"
         },
         {
             "name": "psr/container",
@@ -1444,5 +1524,5 @@
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.3.0"
+    "plugin-api-version": "2.2.0"
 }

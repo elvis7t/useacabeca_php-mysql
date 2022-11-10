@@ -32,8 +32,9 @@ $rs = new Recordset();
                 <tbody>
 
                     <?php
-                    $sql = "SELECT * FROM aliens_abduction";
-                    $rs->Execute($sql);
+                    // $sql = "SELECT * FROM aliens_abduction";
+                    $rs->Select('aliens_abduction');
+                    // $rs->Execute($sql);
                   
                     while ($rs->DataGenerator()) {
                     ?>
