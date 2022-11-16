@@ -22,7 +22,7 @@ final class CreateTableMismatchTopics extends AbstractMigration
 
         $table = $this->table('mismatch_topic', ['id' => 'topic_id']);
         $table->addColumn('name', 'string', ['limit' => 40])
-            ->addColumn('category', 'string', ['limit' => 40])
+            ->addColumn('category_id', 'integer')
             ->create();
     }
 

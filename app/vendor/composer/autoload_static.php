@@ -128,8 +128,8 @@ class ComposerStaticInitf6f4b7979b21a263e75c3470d9c63c54
         ),
         'ElvisLeite\\RecordSetDatabase\\' => 
         array (
-            0 => __DIR__ . '/..' . '/elvis-leite/recordset-database/src',
-            1 => __DIR__ . '/..' . '/elvis7t/recordset-database/src',
+            0 => __DIR__ . '/..' . '/elvis7t/recordset-database/src',
+            1 => __DIR__ . '/..' . '/elvis-leite/recordset-database/src',
         ),
         'Cake\\Utility\\' => 
         array (

@@ -63,8 +63,10 @@
           <ul class="dropdown-menu dropdown-menu-dark">                                   
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_index.php">Index</a></li>                        
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_login.php">Login</a></li>                        
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_quest.php">Form Quest</a></li>                        
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_form_topics.php">Topics form</a></li>
             <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_list_topics.php">Topics List</a></li>                               
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/mis_mymismatch.php">Mismatched</a></li>                               
            
           </ul>
         </li>

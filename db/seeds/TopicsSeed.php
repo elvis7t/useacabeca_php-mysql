@@ -18,16 +18,64 @@ class TopicsSeed extends AbstractSeed
         $data = [
             [
                 'name' => 'Tatoos',
-                'category' => 'Appearance',
+                'category_id' => '1',
             ],[
-                'name' => 'gold chains',
-                'category' => 'Appearance',            
+                'name' => 'Gold chains',
+                'category_id' => '1',            
             ],[
-                'name' => 'body piercings',
-                'category' => 'Appearance',            
+                'name' => 'Body piercing',
+                'category_id' => '1',            
             ],[
-                'name' => 'cowboy boots',
-                'category' => 'Appearance',
+                'name' => 'Cowboy boots',
+                'category_id' => '1',
+            ],[
+                'name' => 'Long hair',
+                'category_id' => '1',
+            ],[
+                'name' => 'Reality TV',
+                'category_id' => '2',            
+            ],[
+                'name' => 'Professional wresling',
+                'category_id' => '2',            
+            ],[
+                'name' => 'Horror movies',
+                'category_id' => '2',
+            ],[
+                'name' => 'Sush',
+                'category_id' => '3',
+            ],[
+                'name' => 'Spam',
+                'category_id' => '3',            
+            ],[
+                'name' => 'Spiey food',
+                'category_id' => '3',            
+            ],[
+                'name' => ' Banana sandwiches',
+                'category_id' => '3',
+            ],[
+                'name' => 'Martinis',
+                'category_id' => '3',
+            ],[
+                'name' => 'Howard stens',
+                'category_id' => '4',            
+            ],[
+                'name' => 'Bill Gates',
+                'category_id' => '4',            
+            ],[
+                'name' => 'Barbara Streisand',
+                'category_id' => '4',
+            ],[
+                'name' => 'Hugh Hefner',
+                'category_id' => '4',            
+            ],[
+                'name' => 'Martha Stewart',
+                'category_id' => '4',
+            ],[
+                'name' => 'Karaoke',
+                'category_id' => '5',            
+            ],[
+                'name' => 'Karaoke',
+                'category_id' => '5',
             ]
         ];
         $table = $this->table('mismatch_topic');

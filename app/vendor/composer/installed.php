@@ -5,7 +5,7 @@
         'type' => 'library',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '37927a64b9ae751c8538aabe9f94797e21189ac8',
+        'reference' => '233185856b24be8eefca75a18c1e3a108695d1ca',
         'name' => 'pratica/mvc',
         'dev' => true,
     ),
@@ -47,12 +47,12 @@
             'dev_requirement' => false,
         ),
         'elvis-leite/recordset-database' => array(
-            'pretty_version' => 'v1.0',
-            'version' => '1.0.0.0',
+            'pretty_version' => 'v1.0.2',
+            'version' => '1.0.2.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../elvis-leite/recordset-database',
             'aliases' => array(),
-            'reference' => '99100537f0e322060715c6c63c20d0026971d2f6',
+            'reference' => 'c4251764f0d3155face09aea8de1108c2aefe172',
             'dev_requirement' => false,
         ),
         'elvis7t/recordset-database' => array(
@@ -70,7 +70,7 @@
             'type' => 'library',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '37927a64b9ae751c8538aabe9f94797e21189ac8',
+            'reference' => '233185856b24be8eefca75a18c1e3a108695d1ca',
             'dev_requirement' => false,
         ),
         'psr/container' => array(

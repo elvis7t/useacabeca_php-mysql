@@ -238,16 +238,16 @@
         },
         {
             "name": "elvis-leite/recordset-database",
-            "version": "v1.0",
+            "version": "v1.0.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/elvis7t/recordset-database.git",
-                "reference": "99100537f0e322060715c6c63c20d0026971d2f6"
+                "reference": "c4251764f0d3155face09aea8de1108c2aefe172"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/elvis7t/recordset-database/zipball/99100537f0e322060715c6c63c20d0026971d2f6",
-                "reference": "99100537f0e322060715c6c63c20d0026971d2f6",
+                "url": "https://api.github.com/repos/elvis7t/recordset-database/zipball/c4251764f0d3155face09aea8de1108c2aefe172",
+                "reference": "c4251764f0d3155face09aea8de1108c2aefe172",
                 "shasum": ""
             },
             "require": {
@@ -269,12 +269,12 @@
                     "email": "elvis7t@gmail.com"
                 }
             ],
-            "description": "A simple library for managing database connections, results pagination and building queries in PHP.",
+            "description": "A simple library for managing database connections and building queries in PHP.",
             "support": {
                 "issues": "https://github.com/elvis7t/recordset-database/issues",
-                "source": "https://github.com/elvis7t/recordset-database/tree/v1.0"
+                "source": "https://github.com/elvis7t/recordset-database/tree/v1.0.2"
             },
-            "time": "2022-11-10T19:22:41+00:00"
+            "time": "2022-11-11T14:24:32+00:00"
         },
         {
             "name": "elvis7t/recordset-database",

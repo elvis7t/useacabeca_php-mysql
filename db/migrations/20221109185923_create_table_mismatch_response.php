@@ -18,10 +18,8 @@ final class CreateTableMismatchResponse extends AbstractMigration
      */
     public function change()
     {
-
         $table = $this->table('mismatch_response', ['id' => 'response_id']);
-        $table->addColumn('category', 'string', ['limit' => 40])
-            ->addColumn('topic_id', 'integer')
+        $table->addColumn('topic_id', 'integer')
             ->addColumn('response', 'string', ['limit' => 40])
             ->addColumn('user_id', 'integer')
             ->create();

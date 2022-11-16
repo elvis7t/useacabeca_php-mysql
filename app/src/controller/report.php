@@ -21,12 +21,12 @@ require_once('../config/menu.php');
     $email = $_POST['email'];   
     $other = $_POST['other'];   
  
-            $dbc = mysqli_connect($host, $user, $pass, $database) or die("Couldn't connect to database'");
+            // $dbc = mysqli_connect($host, $user, $pass, $database) or die("Couldn't connect to database'");
             // mysql_select_db($database, $dbc);
             $sql = "INSERT INTO `aliens_abduction` (`aa_firstname`, `aa_lastname`, `aa_whenithappened`, `aa_howlong`, `aa_howmany`, `aa_aliendescription`, `aa_whattheydid`, `aa_fangspotted`, `aa_email`, `aa_other`) 
             VALUES ('$firstname','$lastname','$whenithappened', '$howlong','$howmany','$aliendescription', '$whattheydid', '$fangspotted', '$email', 't');";
             
-            if (mysqli_query($dbc, $sql)) {       
+            if (mysqli_query($con, $sql)) {       
                 echo '<div class="d-flex justify-content-center">';
                 echo "<h4>New record created successfully</h4>";
                 echo "</div>";

@@ -17,7 +17,7 @@ $rs = new Recordset();
                 $cod = $rs->setAutoCode('topic_id', 'mismatch_topic');
                 $date['topic_id'] = $cod;
                 $date['name'] = $_POST['name'];
-                $date['category'] = $_POST['category'];
+                $date['category_id'] = $_POST['category'];
                 if (!$rs->Insert($date, 'mismatch_topic')) {
                     echo '<div class="alert alert-primary" role="alert">';
                     echo "This Topic has add with success!";
@@ -36,11 +36,14 @@ $rs = new Recordset();
                 <div class="col-md-6">
                     <select class="form-control" name="category" required>
                         <option value="">Choose..</option>
-                        <option value="Appearence">Appearence</option>
-                        <option value="Enterteinment">Enterteinment</option>
-                        <option value="Food">Food</option>
-                        <option value="People">People</option>
-                        <option value="Activities">Activities</option>
+                        <?php
+                        $rs->Select('mismatch_category');
+                        while ($rs->DataGenerator()) {
+                        ?>
+                            <option name="category"value="<?=$rs->fld('category_id') ?>"><?=$rs->fld('name'); ?></option>
+                        <?php
+                        }
+                        ?>
                     </select>
                 </div>
             </div>

@@ -22,7 +22,7 @@ return array(
     'Psr\\Log\\' => array($vendorDir . '/psr/log/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Phinx\\' => array($vendorDir . '/robmorgan/phinx/src/Phinx'),
-    'ElvisLeite\\RecordSetDatabase\\' => array($vendorDir . '/elvis-leite/recordset-database/src', $vendorDir . '/elvis7t/recordset-database/src'),
+    'ElvisLeite\\RecordSetDatabase\\' => array($vendorDir . '/elvis7t/recordset-database/src', $vendorDir . '/elvis-leite/recordset-database/src'),
     'Cake\\Utility\\' => array($vendorDir . '/cakephp/utility'),
     'Cake\\Datasource\\' => array($vendorDir . '/cakephp/datasource'),
     'Cake\\Database\\' => array($vendorDir . '/cakephp/database'),

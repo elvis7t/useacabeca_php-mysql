@@ -11,6 +11,7 @@ if (!isset($_SESSION['user_id'])){
     echo ('<p class="d-flex justify-content-center bg-success text-light"> You are logged in as ' . $_SESSION['user_name'] . ' <a href="mis_logout.php">Log Out</a></p>');
 }
 ?>
+<body>
 <div class="d-flex justify-content-center">
     <h2>View</h2>
 </div>
@@ -26,7 +27,7 @@ if (!isset($_SESSION['user_id'])){
     ?>
         <img src="../../image/<?= $row['user_picture']; ?>" width="100px" alt="<?= $row['user_name']; ?>" class="img-thumbnail img-responsive">
         <p><strong>Username:</strong> <?= $row['user_name'] ?> <br />
-            <strong>Gender:</strong> <?= $row['user_gender'] ?> <br />
+            <strong>Gender:</strong> <?= $row['user_gender'] == 'm' ? 'male' : 'female' ?> <br />
             <strong>Firstname: </strong> <?= $row['user_firstname'] ?> <br />
             <strong>Lastname: </strong> <?= $row['user_lastname'] ?> <br />
             <strong>Birddate: </strong> <?= $row['user_birdate'] ?> <br />
@@ -40,6 +41,7 @@ if (!isset($_SESSION['user_id'])){
     }
     ?>
 </div>
+</body>
 <?php
 require_once('../config/footer.php');
 ?>

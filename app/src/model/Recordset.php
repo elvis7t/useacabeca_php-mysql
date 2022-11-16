@@ -33,7 +33,7 @@ class Recordset
 
 	/**
 	 * Method responsible for runing the sql query
-	 * @param mysqli $sql
+	 * @param string $sql
 	 * @return void	 
 	 */
 	public function Execute($sql): void
@@ -51,6 +51,19 @@ class Recordset
 		//CLOSE CONNECTION
 		$ob =  new Connection();
 		$ob->getDesconnect($this->link);
+	}
+
+	/**
+	 * Method responsible for the number of rows in the table
+	 * @param string $sql
+	 * @return void	 
+	 */
+	public function getCountRows($sql): int
+	{
+		$this->result = mysqli_query($this->link, $sql);
+		
+		//RETURN NUMBER OF TABLE ROWS
+		return $this->numRows  = mysqli_num_rows($this->result);
 	}
 
 	/**

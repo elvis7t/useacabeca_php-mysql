@@ -20,13 +20,17 @@ $rs = new Recordset();
             <tbody>
                 
                     <?php
-                    $rs->Select('mismatch_topic');
+                    $sql = "SELECT mt.topic_id, mt.name as topic_name, mc.name as category_name
+                    FROM mismatch_topic as mt INNER JOIN mismatch_category as mc
+                    USING (category_id)
+                    ";
+                    $rs->Execute($sql);
                     while ($rs->DataGenerator()) {
                     ?>
                     <tr>
                         <td><?= $rs->fld("topic_id"); ?></td>
-                        <td><?= $rs->fld("name"); ?></td>
-                        <td><?= $rs->fld("category"); ?></td>
+                        <td><?= $rs->fld("topic_name"); ?></td>
+                        <td><?= $rs->fld("category_name"); ?></td>
                     <?php
                     }
                     ?>
