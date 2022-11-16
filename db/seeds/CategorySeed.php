@@ -34,5 +34,6 @@ class CategorySeed extends AbstractSeed
         ];
         $table = $this->table('mismatch_topic');
         $table->insert($data)
-              ->save();
+        ->save();
+  }
 }
