@@ -53,7 +53,7 @@ class UserSeed extends AbstractSeed
                            
             ]
         ];
-        $table = $this->table('mismatch_topic');
+        $table = $this->table('mismatch_user');
         $table->insert($data)
         ->save();
   }
