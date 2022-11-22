@@ -72,6 +72,14 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Risk Jobs
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">            
+            <li><a class="dropdown-item" href="<?=$hosted;?>view/rj_index.php">Risk Jobs</a></li>            
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             Test
           </a>
           <ul class="dropdown-menu dropdown-menu-dark">            
