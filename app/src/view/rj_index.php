@@ -2,6 +2,8 @@
 require_once '../model/conf.php';
 require_once('../config/menu.php');
 require_once '../model/conf.php';
+require_once '../entities/Search.php';
+$ob = new Search();
 ?>
 
 <body>
@@ -33,36 +35,8 @@ require_once '../model/conf.php';
                     
                     <?php
                     if (isset($_POST['submit'])) {
-                        $sql = "SELECT * FROM mismatch_riskyjobs";
-                        // Extrai as palavras-chaves de busca e as coloca em um array
                         $search = $_POST['search'];
-                        $clean = str_replace(',', '', $search);
-                        $words = explode(' ', $clean);
-                        $final_search_words = array();
-                        
-                        if (count($words) > 0) {
-                            foreach ($words as $word) {
-                                if (!empty($word)) {
-                                    $final_search_words[] = $word;
-                                }
-                            }
-                        }
-
-                        // //Gera uma cláusula WHERE usando todas as palavras-chaves de busca
-                        $where = array();
-
-                        if(count($final_search_words) > 0) {
-                            foreach ($final_search_words as $word){
-                                $where[] = "description LIKE'%" . $word . "%'";
-                            }
-                        }
-                        $clause = implode(' OR ', $where);
-
-                        // Adiciona a cláusula WHERE á consulta de busca.                        
-                        if (!empty($clause)) {
-                            $sql .= " WHERE $clause";
-                        }
-                        // echo $sql;exit;
+                        $sql = $ob->buildQuery($search);                       
                         $result = mysqli_query($con, $sql);
                         $row = array();
                         if (mysqli_num_rows($result) == 0) {
@@ -70,7 +44,7 @@ require_once '../model/conf.php';
                         };
                         echo '<p class="h3 d-flex d-flex justify-content-center" ><strong>Results</strong></p>';
                         echo '<p class="h3 d-flex d-flex justify-content-center bg-warning" >' . $men . '</p>';
-
+                         echo $ob->generate_sort_link($search,'5')   ;
                         while ($row = mysqli_fetch_array($result)) {
                     ?>
                     <table class="table table-striped">
@@ -80,10 +54,10 @@ require_once '../model/conf.php';
                             <th>Description</th>
                         </thead>
                         <tbody>
-                            <tr>
+                            <tr>                                
                                 <td><?= $row['job_id']; ?></td>
                                 <td><?= $row['title']; ?></td>
-                                <td><?= $row['description']; ?></td>
+                                <td><?= substr($row['description'], 0,100); ?></td>
                             </tr>
                         </tbody>
 
